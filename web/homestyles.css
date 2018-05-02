@@ -1,0 +1,109 @@
+h1 {
+    float: inherit;
+    position: fixed;
+    width: 2000px;
+    height: 0px;
+    margin: -20px;
+    border: 75px solid rgb(100,200,100);
+    color: white;
+    font-family: "Calibri", Times, serif;
+}
+.absolutepic {
+    position: fixed;
+    right: 10px;
+    top: 30px;
+}
+.Description
+{
+  font-family: "Calibri";
+    font-size: 40px;
+}
+.HOME {
+    float: left;
+    width: 1000px;
+    height: 0px;
+    margin: 10px;
+    border: 50px solid rgb(10,10,10);
+    color: white;
+    font-family: "Calibri", Times, serif;
+}
+.BottomBar {
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 0px;
+    border: 20px solid rgb(200,200,200);
+    color: black;
+    font-family: "Agency FB", Times, serif;
+}
+.BottomBar2 {
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 0px;
+    border: 20px solid rgb(100,100,100);
+    color: black;
+    font-family: "Aparajita", Times, serif;
+}
+.BottomBar3 {
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 0px;
+    border: 20px solid rgb(200,20,200);
+    color: white;
+    font-family: "David", Times, serif;
+}
+.SearchBar {
+    float: left;
+    width: 200px;
+    height: 0px;
+    border: 40px solid rgb(220,220,255);
+    color: black;
+    font-family: "Arial", Times, serif;
+}
+.Link {
+    float: left;
+    width: 200px;
+    height: 0px;
+    border: 30px solid rgb(220,220,255);
+    color: black;
+    font-family: "Candara", Times, serif;
+}
+.Info2 {
+    float: right;
+    width: 600px;
+    height: 0px;
+    border: 30px solid rgb(220,220,255);
+    color: black;
+    font-family: "Aharoni", Times, serif;
+    font-size: 20px;
+}
+.Info3 {
+    float: right;
+    width: 700px;
+    height: 0px;
+    border: 40px solid rgb(220,100,100);
+    color: black;
+    font-family: "Century", Times, serif;
+    font-size: 15px;
+}
+#Form1 {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 0px;
+    border: 30px solid rgb(20,200,200);
+    color: black;
+    font-family: "Californian FB", Times, serif;
+    font-size: 17px;
+}
+#Form2 {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 0px;
+    border: 30px solid rgb(20,200,20);
+    color: black;
+    font-family: "Berlin Sans FB", Times, serif;
+}
