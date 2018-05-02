@@ -1,3 +1,3 @@
 <?php
-    echo "Hello World!";
+    echo "<p align=center>Hello World!</p>";
 ?>
