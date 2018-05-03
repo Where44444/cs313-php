@@ -1,6 +1,5 @@
-<?php
-    echo "<p class=message>Welcome! You Are Not Signed In Boi!</p>";
-?>
+<html>
+<style>
 .message{
   margin: 300px;
   border: 100px solid rgb(100,200,100);
@@ -9,3 +8,8 @@
   font-family: "Calibri", Times, serif;
   color: white;
 }
+</style>
+</html>
+<?php
+    echo "<p class=message>Welcome! You Are Not Signed In Boi!</p>";
+?>
