@@ -6,6 +6,4 @@ echo $name;
 echo <br>;
 echo $email;
 echo <br>;
-echo $major;
-echo <br>;
 ?>
