@@ -1,3 +1,4 @@
 <?php
-  echo $_POST["name"];
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+echo $name;
 ?>
