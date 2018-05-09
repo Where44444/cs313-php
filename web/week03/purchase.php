@@ -2,10 +2,10 @@
 // Start the session
 session_start();
 // Set session variables
-$_SESSION["small"] = 0;
-$_SESSION["medium"] = 0;
-$_SESSION["large"] = 0;
-$_SESSION["giant"] = 0;
+$_SESSION['small'] = 0;
+$_SESSION['medium'] = 0;
+$_SESSION['large'] = 0;
+$_SESSION['giant'] = 0;
 
 ?>
 <!DOCTYPE html>
