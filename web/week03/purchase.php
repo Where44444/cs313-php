@@ -1,6 +1,12 @@
 <?php
 // Start the session
 session_start();
+// Set session variables
+$_SESSION["small"] = 0;
+$_SESSION["medium"] = 0;
+$_SESSION["large"] = 0;
+$_SESSION["giant"] = 0;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,14 +48,6 @@ tr:nth-child(odd) {
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
       <span id="qtySmall">0</span></p>
-
-      <?php
-      // Set session variables
-      $_SESSION["small"] = 0;
-      $_SESSION["medium"] = 0;
-      $_SESSION["large"] = 0;
-      $_SESSION["giant"] = 0;
-      ?>
 
       <p class=BottomBar2 style="position: absolute; top: 1410px; left: 50px">
       Where44444 Copyright 2017 Alrights Reserved =D <br>
