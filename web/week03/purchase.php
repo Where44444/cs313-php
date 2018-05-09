@@ -5,7 +5,21 @@ session_start();
 <!DOCTYPE html>
 <html>
    <head>
-   <script type="text/javascript" src="MyJavaScript.js"></script>
+   <script>
+   function addToCart(str)
+   {
+     window.alert("Test");
+         var xmlhttp = new XMLHttpRequest();
+         xmlhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("qtySmall").innerHTML = this.responseText;
+             }
+         };
+         xmlhttp.open("GET", "addToCart.php?q=" + str, true);
+         xmlhttp.send();
+     }
+   }
+   </script>
        <title>Business Page</title>
        <style>
 table {
