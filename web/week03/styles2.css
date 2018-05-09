@@ -1,0 +1,57 @@
+div {
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 0px;
+    border: 20px solid rgb(200,20,200);  
+    color: white;
+    font-family: "David", Times, serif;
+}
+
+a {
+    float: left;
+    width: 200px;
+    height: 0px;
+    border: 30px solid rgb(220,220,255);  
+    color: black;
+    font-family: "Candara", Times, serif;
+}
+p {
+    float: right;
+    width: 600px;
+    height: 0px;
+    border: 30px solid rgb(220,220,255);  
+    color: black;
+    font-family: "Aharoni", Times, serif;
+    font-size: 20px;
+}
+li {
+    float: right;
+    width: 700px;
+    height: 0px;
+    border: 40px solid rgb(220,100,100);  
+    color: black;
+    font-family: "Century", Times, serif;
+    font-size: 15px;
+}
+h1 {
+    float: left;
+    width: 1000px;
+    height: 0px;
+    margin: 10px;
+    border: 50px solid rgb(100,100,200);  
+    color: white;
+    font-family: "Calibri", Times, serif;
+}
+h3 {
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 0px;
+    border: 20px solid rgb(200,200,200);  
+    color: black;
+    font-family: "Agency FB", Times, serif;
+}
+body {
+    color: lightblue;
+}

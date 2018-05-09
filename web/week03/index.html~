@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Business Page</title>
+   </head>
+   <body>
+      <p>Business Page!</p>
+      <img src="RCPhoneBrackets.jpg" alt="RC Phone Bracket" height="288" width="531">
+   </body>
+</html>
