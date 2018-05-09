@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+//My code is using jQuery, it's mainly capturing the animations you can easily do with text
+//You can put all the code in this <script> section here, then it accesses the elements in your HTML body.
+//I used a few functions that are activated whenever the users clicks or moves their mouse over some text.
+//You can move elements around, make them fade in or out, even have them cycle through different colors
+//if you have the right plug-in.
+var score = 0;
+$(document).ready(function(){
+$("#lol").hide();
+    $("#dis").mouseenter(function(){
+        $(this).fadeOut("fast");
+        $("#lol").fadeIn("fast");
+    });
+    $("#money").mouseenter(function(){
+        $(this).animate({left: '+=500px'});
+    });
+
+    $("#game1").click(function(){
+        $(this).hide();
+        score+= 1000;
+        document.getElementById("score").innerHTML = score;
+    });
+        $("#game2").click(function(){
+        $(this).hide();
+        score += 50000;
+        document.getElementById("score").innerHTML = score;
+    });
+        $("#game3").click(function(){
+        $(this).hide();
+        score += 5000;
+        document.getElementById("score").innerHTML = score;
+    });
+
+function anim1(){
+        if (Math.random() < 0.2)
+        {
+          $("#game1").show();
+        }
+        $("#game1").animate({left: '+=200px'}).
+        animate({left: '-=200px'}, function(){
+        anim1();
+        })
+        }
+function anim2(){
+        if (Math.random() < 0.3)
+        {
+          $("#game2").show();
+        }
+        $("#game2").animate({top: '+=200px'}).
+        animate({top: '-=200px'}, function(){
+        anim2();
+        })
+        }
+function anim3(){
+        if (Math.random() < 0.4)
+        {
+          $("#game3").show();
+        }
+        $("#game3").animate({left: '+=500px'}).
+        animate({left: '-=500px'}, function(){
+        anim3();
+        })
+        }
+
+anim1();
+anim2();
+anim3();
+});
+</script>
+</head>
+<body>
+
+<p id="money" style="position:relative;">Click for Free Money!</p>
+<br><br><br><br><p>---------------------------</p><br><br><br><br><br>
+<p>Your low score is: <div id="score">0</div></p>
+<p id="game1" class="game" style="position:relative;">Click for points!</p>
+<p id="game2" class="game" style="position:relative;">Click for points!</p>
+<p id="game3" class="game" style="position:relative;">Click for points!</p>
+<br><br><br><br><p>---------------------------</p><br><br><br><br><br>
+<p id="dis">Ok, for real, you can click me for money</p>
+<p id="lol">lol</p>
+</body>
+</html>
