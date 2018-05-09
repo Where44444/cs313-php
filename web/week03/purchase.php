@@ -49,10 +49,10 @@ tr:nth-child(odd) {
       </a>
       <span id="qtySmall">0</span></p>
 
-      <a href=# onclick="addToCart('1')">
+      <a href=# onclick="displayVar('small')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
-      
+
       <p class=BottomBar2 style="position: absolute; top: 1410px; left: 50px">
       Where44444 Copyright 2017 Alrights Reserved =D <br>
       We are not responsible for any mysterious disappearances of money <br>

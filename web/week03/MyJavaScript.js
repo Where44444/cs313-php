@@ -18,7 +18,7 @@ function addToCart(str)
             document.getElementById("qtySmall").innerHTML = this.responseText;
         }
     };
-    xmlhttp.open("GET", "addToCart.php?q=" + str, true);
+    xmlhttp.open("GET", "test.php?q=" + str, true);
     xmlhttp.send();
   }
 
