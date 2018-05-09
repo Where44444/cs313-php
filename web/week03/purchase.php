@@ -41,7 +41,7 @@ tr:nth-child(odd) {
       <a href=# onclick=addToCart('small')>
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
-      <span id="qtySmall"></span></p>
+      <span id="qtySmall">0</span></p>
 
       <?php
       // Set session variables
