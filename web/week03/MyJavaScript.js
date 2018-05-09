@@ -10,7 +10,6 @@ function addToCart(str)
       xmlhttp.open("GET", "addToCart.php?q=" + str, true);
       xmlhttp.send();
   }
-}
 
 function function1()
 {
