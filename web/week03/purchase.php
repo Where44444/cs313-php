@@ -38,7 +38,7 @@ tr:nth-child(odd) {
       We may even send you some!</p>
       <p id="Load1" style="color:blue"></p>
       <br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href=# onclick=addToCart('small')>
+      <a href=# onclick="addToCart('small')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
       <span id="qtySmall">0</span></p>
