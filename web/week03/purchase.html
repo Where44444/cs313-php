@@ -38,8 +38,9 @@ tr:nth-child(odd) {
       We may even send you some!</p>
       <p id="Load1" style="color:blue"></p>
       <br><br><br><br><br><br><br><br><br><br><br><br>
-      <img class=img src="RCBracket.png" onclick="<?php echo 'test'; ?>" alt="RC Phone Bracket" height="170" width="256">
-
+      <a href="#" onClick=addToCart('small')>
+      <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
+      </a>
 
       <?php
       // Set session variables

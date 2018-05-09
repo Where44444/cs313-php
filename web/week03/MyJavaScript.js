@@ -1,3 +1,8 @@
+function addToCart(item)
+{
+  $('#newCode').load('addToCart.php?id=' + id);
+}
+
 
 function function1()
 {
@@ -52,7 +57,7 @@ function function1()
     var grandTotal3 = Number(grandTotal2);
     var grandTotal4 = grandTotal3 + shipping3;
     document.getElementById("Cost4").innerHTML = "$" + grandTotal4.toFixed(2);;
-    
+
   }
 }
 
@@ -98,7 +103,7 @@ function function3()
     var res3 = str.match(/\s*\d{4}\s\d{4}\s\d{4}\s\d{4}/);
     var res4 = str.match(/\s*\d{4}\s\d{4}\s\d{4}\s\d{4}[\s]*[\S]+/);
     var res5 = str.match(/\s*\d{5}\s\d{4}\s\d{4}\s\d{4}[\s]*/);
-    
+
     if ((res && !res2) || (res3 && !res4 && !res5))
     {
     document.getElementById(invalidNumber).innerHTML = "";
@@ -107,7 +112,7 @@ function function3()
     {
     document.getElementById(invalidNumber).innerHTML = "Invalid";
     }
-    
+
 }
 
 function function4()
@@ -150,12 +155,12 @@ function function4()
     var res6 = res5String.match(/[\/][\S]+/);
     var res6String = res6.toString();
     var res7 = res6String.match(/\d+/);
-    
+
     var resMonth = Number(res);
     var resDay = Number(res3);
     var resYear = Number(res7);
     //window.alert(resDay);
-    
+
     if (resMonth < 1 || resMonth > 12)
     {
     validDate = 0;
@@ -205,7 +210,7 @@ function function5()
       resString = res.toString();
       res4 = resString.match(/\w{2}/);
       res4String = res4.toString();
-  
+
       if (res4String != "AL" && res4String != "AK" && res4String != "AZ" && res4String != "AR" && res4String != "CA" && res4String != "CO" && res4String != "CT" && res4String != "DE" && res4String != "FL" && res4String != "GA" && res4String != "HI" && res4String != "ID" && res4String != "IL" && res4String != "IN" && res4String != "IA" && res4String != "KS" && res4String != "KY" && res4String != "LA" && res4String != "ME" && res4String != "MD" && res4String != "MA" && res4String != "MI" && res4String != "MN" && res4String != "MS" && res4String != "MO" && res4String != "MT" && res4String != "NE" && res4String != "NV" && res4String != "NH" && res4String != "NJ" && res4String != "NM" && res4String != "NY" && res4String != "NC" && res4String != "ND" && res4String != "OH" && res4String != "OK" && res4String != "OR" && res4String != "PA" && res4String != "RI" && res4String != "SC" && res4String != "SD" && res4String != "TN" && res4String != "TX" && res4String != "UT" && res4String != "VT" && res4String != "VA" && res4String != "WA" && res4String != "WV" && res4String != "WI" && res4String != "WY")
       {
         validState = 0;
@@ -280,7 +285,7 @@ function function6()
     {
       validMoney = 0;
     }
-    
+
     if(hasDecimal && !hasTwoPlaces)
     {
       validMoney = 0;
@@ -289,7 +294,7 @@ function function6()
     {
     validMoney = 0;
     }
-    
+
     if (validMoney)
     {
     document.getElementById(invalidNumber).innerHTML = "";
@@ -309,7 +314,7 @@ function function7()
     var invalidNumber;
     formNumber = "address";
     invalidNumber = "addressInvalid";
-    
+
 
     var str = document.getElementById(formNumber).value;
     var res = str.match(/\d/);
@@ -331,7 +336,7 @@ function function8()
     var invalidNumber;
     formNumber = "phone";
     invalidNumber = "phoneInvalid";
-    
+
 
     var str = document.getElementById(formNumber).value;
     var res = str.match(/\d{3}\-\d{3}\-\d{4}/);
@@ -353,7 +358,7 @@ function function9()
     var invalidNumber;
     formNumber = "month";
     invalidNumber = "monthInvalid";
-    
+
 
     var str = document.getElementById(formNumber).value;
     var res2 = str.match(/\./);
@@ -374,7 +379,7 @@ function function10()
     var invalidNumber;
     formNumber = "year";
     invalidNumber = "yearInvalid";
-    
+
 
     var str = document.getElementById(formNumber).value;
     var res2 = str.match(/\./);
@@ -399,7 +404,7 @@ function function11()
     var invalidNumber;
     formNumber = "sc";
     invalidNumber = "scInvalid";
-    
+
 
     var str = document.getElementById(formNumber).value;
     var res2 = str.match(/\d{3}/);
