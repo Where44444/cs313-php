@@ -37,12 +37,14 @@ tr:nth-child(odd) {
       <p class=Info2>Purchase RC Brackets Here! Click to add 1 to cart!<br>
       We may even send you some!</p>
       <p id="Load1" style="color:blue"></p>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <img class=img src="RCBracket.png" onclick="<?php echo 'test'; ?>" alt="RC Phone Bracket" height="170" width="256">
+
 
       <?php
       // Set session variables
       $_SESSION["favcolor"] = "green";
       $_SESSION["favanimal"] = "cat";
-      echo "Session variables are set.";
       ?>
 
       <p class=BottomBar2 style="position: absolute; top: 1410px; left: 50px">
