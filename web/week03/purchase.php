@@ -41,19 +41,19 @@ tr:nth-child(odd) {
       <a href=# onclick="addToCart('small')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="85" width="128">
       </a>
-      <p>Small <span id="small">0</span></p><br>
+      <p>Small <span id="small"><?php echo $_SESSION['small']; ?></span></p><br>
       <a href=# onclick="addToCart('medium')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
-      <p>Medium <span id="medium">0</span></p><br>
+      <p>Medium <span id="medium"><?php echo $_SESSION['medium']; ?></span></p><br>
       <a href=# onclick="addToCart('large')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="340" width="512">
       </a>
-      <p>Large <span id="large">0</span></p><br>
+      <p>Large <span id="large"><?php echo $_SESSION['large']; ?></span></p><br>
       <a href=# onclick="addToCart('giant')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="850" width="1280">
       </a>
-      <p>... <span id="giant">0</span></p><br>
+      <p>... <span id="giant"><?php echo $_SESSION['giant']; ?></span></p><br>
 
       <p class=BottomBar2 style="position: absolute; left: 50px">
       Where44444 Copyright 2017 Alrights Reserved =D <br>
