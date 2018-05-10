@@ -401,11 +401,11 @@ function function10()
 
     var str = document.getElementById(formNumber).value;
     var res2 = str.match(/\./);
-    if (document.getElementById("month").value < 5 && str == 2018)
+    if (document.getElementById("month").value < 6 && str == 2018)
     {
 	 document.getElementById(invalidNumber).innerHTML = "Invalid";
     }
-    else if (str > 2018 && str < 2101 && !res2)
+    else if (str > 2017 && str < 2101 && !res2)
     {
     document.getElementById(invalidNumber).innerHTML = "";
     }
