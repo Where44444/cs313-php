@@ -1,8 +1,6 @@
 <?php
 // Start the session
 session_start();
-// Set session variables
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,10 +32,10 @@ tr:nth-child(odd) {
    <body>
 
 <?php
-$_SESSION['small'] = '0';
-$_SESSION['medium'] = '0';
-$_SESSION['large'] = '0';
-$_SESSION['giant'] = '0';
+$_SESSION['small'] = 0;
+$_SESSION['medium'] = 0;
+$_SESSION['large'] = 0;
+$_SESSION['giant'] = 0;
 ?>
       <h1 class=Title2>PURCHASE</h1>
       <a class=Link href="index.html">Home</a>
@@ -50,7 +48,7 @@ $_SESSION['giant'] = '0';
       <a href=# onclick="addToCart('small')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
-      
+
       <span id="qtySmall">0</span></p>
 
       <a href=# onclick="displayVar('small')">
