@@ -1,3 +1,3 @@
 <?php
-echo $_SESSION['$_REQUEST["q"]'];
+echo $_SESSION[$_REQUEST["q"]];
 ?>

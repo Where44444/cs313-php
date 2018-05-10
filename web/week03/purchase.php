@@ -2,10 +2,7 @@
 // Start the session
 session_start();
 // Set session variables
-$_SESSION['small'] = '0';
-$_SESSION['medium'] = '0';
-$_SESSION['large'] = '0';
-$_SESSION['giant'] = '0';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +32,13 @@ tr:nth-child(odd) {
    </head>
    <link rel="stylesheet" type="text/css" href="styles.css">
    <body>
+
+<?php
+$_SESSION['small'] = '0';
+$_SESSION['medium'] = '0';
+$_SESSION['large'] = '0';
+$_SESSION['giant'] = '0';
+?>
       <h1 class=Title2>PURCHASE</h1>
       <a class=Link href="index.html">Home</a>
       <a class=Link href="cart.html">Cart</a>
