@@ -37,7 +37,8 @@ tr:nth-child(odd) {
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <?php
       if ($_SESSION['small'] > 0)
-      echo "<pre>Small Bracket -  Quantity: <span id='small'>" . $_SESSION['small'] . "</span></pre><br>";
+      echo "<pre>Small Bracket -  Quantity: <span id='small'>" . $_SESSION['small'] .
+      "</span></pre><a href=# onclick="removeFromCart('small')">-</a>". " " . "<a href=# onclick="addToCart('small')">+</a><br>";
       if ($_SESSION['medium'] > 0)
       echo "<pre>Medium Bracket - Quantity: <span id='medium'>" . $_SESSION['medium'] . "</span></pre><br>";
       if ($_SESSION['large'] > 0)
