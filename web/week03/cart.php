@@ -29,7 +29,7 @@ tr:nth-child(odd) {
 </style>
    </head>
    <link rel="stylesheet" type="text/css" href="styles.css">
-   <body onload="functionLoad()">
+   <body>
       <h1 class=Title2>CART</h1>
       <a class=Link href="index.php">Home</a>
       <a class=Link href="purchase.php">Browse</a>
