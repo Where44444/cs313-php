@@ -51,7 +51,7 @@ $_SESSION['giant'] = 0;
 
       <span id="qtySmall">0</span></p>
 
-      <a href=# onclick="displayVar('small')">
+      <a href=# onclick="addToCart('medium')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
 
