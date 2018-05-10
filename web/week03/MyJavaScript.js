@@ -1,5 +1,6 @@
 function addToCart(str)
 {
+  window.alert("test");
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
@@ -9,8 +10,8 @@ function addToCart(str)
       xmlhttp.open("GET", "addToCart.php?q=" + str, true);
       xmlhttp.send();
   }
-test
-  function removeFromCart(str)
+
+  /*function removeFromCart(str)
   {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -21,7 +22,7 @@ test
         xmlhttp.open("GET", "removeFromCart.php?q=" + str, true);
         xmlhttp.send();
     }
-
+*/
 function function1()
 {
     var grandTotal = 0;
