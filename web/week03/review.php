@@ -22,7 +22,7 @@ $months = array("NULL" ,"January", "February", "March", "April", "May", "June", 
 "August", "September", "October", "November", "December");
 
 echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><form action=\"confirmation.php\" method=\"POST\" /><p id=Form3><b><i>Name</i></b><br>" ,
-filter_input(INPUT_POST, 'inputName', FILTER_SANITIZE_STRING);,
+filter_input(INPUT_POST, 'inputName', FILTER_SANITIZE_STRING),
 
 "<br><br><b><i>Address</i></b><br>",
 $_POST["inputAddress"], "<br>" ,
