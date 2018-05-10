@@ -48,6 +48,8 @@ tr:nth-child(odd) {
       if ($_SESSION['giant'] > 0)
       echo "<pre>THAT Bracket -   Quantity: <span id='giant'>" . $_SESSION['giant'] .
       "</span><a href=# onclick='removeFromCart(\"giant\")'> - </a>". "<a href=# onclick='addToCart(\"giant\")'> + </a></pre>br>";
+      if ($_SESSION['small'] > 0 || $_SESSION['medium'] > 0 || $_SESSION['large'] > 0 || $_SESSION['giant'] > 0)
+      echo "<a class=Link href="checkout.php">Proceed to Checkout</a>"
       ?>
 
 
