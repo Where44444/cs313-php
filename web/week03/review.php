@@ -31,22 +31,22 @@ filter_input(INPUT_POST, 'inputAddress', FILTER_SANITIZE_STRING), "<br>" ,
 filter_input(INPUT_POST, 'inputCity', FILTER_SANITIZE_STRING), ", " , filter_input(INPUT_POST, 'inputState', FILTER_SANITIZE_STRING), "<br><br><b><i>Phone Number</i></b><br>",
 
 filter_input(INPUT_POST, 'inputPhone', FILTER_SANITIZE_STRING), "<br><br><b><i>Items</i></b><br>",
-"Small Bracket     x", $_SESSION["small"], "    =$",  $_POST["small"]*2458.99, "<br>",
+"Small Bracket     x", $_SESSION["small"], "    =$",  $_SESSION["small"]*2458.99, "<br>",
 "Medimum Bracket     x", $_SESSION["medium"], "    =$",  $_SESSION["medium"]*10333.99, "<br>",
 "Large Bracket     x", $_SESSION["large"], "    =$", $_SESSION["large"]*100020628.99, "<br>",
 "BIG FREAKIN Bracket     x", $_SESSION["giant"], "    =$", $_SESSION["giant"]*999999999.99, "<br><br>",
 
 "<b><i>Totals</i></b><br>",
-"Shipping + Tax + Handling<br>$", floor(($_POST["small"]*2458.99+$_POST["medium"]*10333.99+
-$_POST["giant"]*100020628.99)*.001)/100, "<br>",
+"Shipping + Tax + Handling<br>$", floor(($_SESSION["small"]*2458.99+$_SESSION["medium"]*10333.99+
+$_SESSION["giant"]*100020628.99)*.001)/100, "<br>",
 "Grand Total<br>$",
-floor(($_POST["small"]*2458.99+$_POST["medium"]*10333.99+
-$_POST["large"]*100020628.99)*.001)/100 + $_POST["small"]*2458.99 + $_POST["medium"]*10333.99+
-$_POST["large"]*100020628.99+$_POST["giant"]*999999999.99, "<br><br>",
+floor(($_SESSION["small"]*2458.99+$_SESSION["medium"]*10333.99+
+$_SESSION["large"]*100020628.99)*.001)/100 + $_SESSION["small"]*2458.99 + $_SESSION["medium"]*10333.99+
+$_SESSION["large"]*100020628.99+$_SESSION["giant"]*999999999.99, "<br><br>",
 
 "<b><i>Payment</i></b><br>",
-$_POST["card"], "<br>",
-"Expires ", $months[$_POST["inputMonth"]], " ", $_POST["inputYear"], "<br>",
+filter_input(INPUT_POST, 'card', FILTER_SANITIZE_STRING), "<br>",
+"Expires ", $months[filter_input(INPUT_POST, 'inputMonth', FILTER_SANITIZE_STRING)], " ", filter_input(INPUT_POST, 'inputYear', FILTER_SANITIZE_STRING), "<br>",
 '<input type="submit" name="submit" action="confirmation.php" \>
 <input type="submit" name="cancel" value="Cancel" action="confirmation.php" \>',
 //'<button name="cancel" onclick="http://localhost/~alexjc/week12/confirmation.php">Cancel</button>',
