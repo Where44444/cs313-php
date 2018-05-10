@@ -1,4 +1,5 @@
 <?php
 session_start();
-echo $_SESSION['small'];
+//echo $_SESSION['small'];
+echo "q";
 ?>
