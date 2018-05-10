@@ -34,11 +34,11 @@ tr:nth-child(odd) {
       <a class=Link href="index.php">Home</a>
       <a class=Link href="purchase.php">Browse</a>
       <a class=Link href="contact.html">Contact</a>
-      <br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <?php
       if ($_SESSION['small'] > 0)
       echo "Small Bracket - Quantity: " . $_SESSION['small'];
-       ?>
+      ?>
 
 
       <p class=BottomBar2 style="position: absolute; top: 800px; left: 50px">
