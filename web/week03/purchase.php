@@ -37,7 +37,7 @@ $_SESSION['medium'] = 0;
 $_SESSION['large'] = 0;
 $_SESSION['giant'] = 0;
 ?>
-      <h1 class=Title2>PURCHASE</h1>
+      <h1 class=Title2>BROWSE/h1>
       <a class=Link href="index.html">Home</a>
       <a class=Link href="cart.html">Cart</a>
       <a class=Link href="contact.html">Contact</a>
