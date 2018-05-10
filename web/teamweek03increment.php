@@ -1,7 +1,7 @@
 <?php
 // Start the session
 session_start();
-$_SESSION['times'] = 0;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,8 +10,8 @@ $_SESSION['times'] = 0;
    </head>
    <body>
      <?php
-     $_SESSION['times'] += 1;
+$_SESSION['times'] += 1;
      ?>
-<p>You have visited this page <?php echo $SESSION['times']; ?></p>
+<p>You have visited this page <?php echo $_SESSION['times']; ?></p>
    </body>
 </html>
