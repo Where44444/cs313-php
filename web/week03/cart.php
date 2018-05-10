@@ -39,11 +39,11 @@ tr:nth-child(odd) {
       if ($_SESSION['small'] > 0)
       echo "<pre>Small Bracket -    Quantity: </pre>" . $_SESSION['small'] . "<br><br>";
       if ($_SESSION['medium'] > 0)
-      echo "Medium Bracket - Quantity: " . $_SESSION['medium'] . "<br><br>";
+      echo "<pre>Medium Bracket - Quantity: </pre>" . $_SESSION['medium'] . "<br><br>";
       if ($_SESSION['large'] > 0)
-      echo "Large Bracket - Quantity: " . $_SESSION['large'] . "<br><br>";
+      echo "<pre>Large Bracket -    Quantity: </pre>" . $_SESSION['large'] . "<br><br>";
       if ($_SESSION['giant'] > 0)
-      echo "THAT Bracket - Quantity: " . $_SESSION['giant'] . "<br><br>";
+      echo "<pre>THAT Bracket -   Quantity: </pre>" . $_SESSION['giant'] . "<br><br>";
       ?>
 
 
