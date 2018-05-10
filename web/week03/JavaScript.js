@@ -11,7 +11,7 @@ function addToCart(str)
       xmlhttp.send();
   }
 
-  /*function removeFromCart(str)
+  function removeFromCart(str)
   {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -22,7 +22,7 @@ function addToCart(str)
         xmlhttp.open("GET", "removeFromCart.php?q=" + str, true);
         xmlhttp.send();
     }
-*/
+
 function function1()
 {
     var grandTotal = 0;

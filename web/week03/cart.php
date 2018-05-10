@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
    <head>
-   <script type="text/javascript" src="MyJavaScript.js"></script>
+   <script type="text/javascript" src="JavaScript.js"></script>
        <title>Business Page</title>
        <style>
 table {
