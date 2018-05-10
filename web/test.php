@@ -1,4 +1,5 @@
 <?php
 session_start();
-echo $_SESSION['$_REQUEST["q"]'];
+$size = $_REQUEST["q"]
+echo $_SESSION[$size];
 ?>
