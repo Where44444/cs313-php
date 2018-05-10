@@ -25,22 +25,22 @@ echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><form action=\"confirm
 filter_input(INPUT_POST, 'inputName', FILTER_SANITIZE_STRING),
 
 "<br><br><b><i>Address</i></b><br>",
-$_POST["inputAddress"], "<br>" ,
-$_POST["inputCity"], ", " , $_POST["inputState"], "<br><br><b><i>Phone Number</i></b><br>",
+filter_input(INPUT_POST, 'inputAddress', FILTER_SANITIZE_STRING), "<br>" ,
+filter_input(INPUT_POST, 'inputCity', FILTER_SANITIZE_STRING), ", " , filter_input(INPUT_POST, 'inputState', FILTER_SANITIZE_STRING), "<br><br><b><i>Phone Number</i></b><br>",
 
-$_POST["inputPhone"], "<br><br><b><i>Items</i></b><br>",
-"2 Inch Bracket     x", $_POST["input2Inch"], "    =$",  $_POST["input2Inch"]*2458.99, "<br>",
-"5 Inch Bracket     x", $_POST["input5Inch"], "    =$",  $_POST["input5Inch"]*10333.99, "<br>",
-"10 523/1000 Inch Bracket     x", $_POST["input10Inch"], "    =$",
-$_POST["input10Inch"]*100020628.99, "<br><br>",
+filter_input(INPUT_POST, 'inputPhone', FILTER_SANITIZE_STRING), "<br><br><b><i>Items</i></b><br>",
+"Small Bracket     x", $_SESSION["small"], "    =$",  $_POST["small"]*2458.99, "<br>",
+"Medimum Bracket     x", $_SESSION["medium"], "    =$",  $_SESSION["medium"]*10333.99, "<br>",
+"Large Bracket     x", $_SESSION["large"], "    =$", $_SESSION["large"]*100020628.99, "<br>",
+"BIG FREAKIN Bracket     x", $_SESSION["giant"], "    =$", $_SESSION["giant"]*999999999.99, "<br><br>",
 
 "<b><i>Totals</i></b><br>",
-"Shipping + Tax + Handling<br>$", floor(($_POST["input2Inch"]*2458.99+$_POST["input5Inch"]*10333.99+
-$_POST["input10Inch"]*100020628.99)*.001)/100, "<br>",
+"Shipping + Tax + Handling<br>$", floor(($_POST["small"]*2458.99+$_POST["medium"]*10333.99+
+$_POST["giant"]*100020628.99)*.001)/100, "<br>",
 "Grand Total<br>$",
-floor(($_POST["input2Inch"]*2458.99+$_POST["input5Inch"]*10333.99+
-$_POST["input10Inch"]*100020628.99)*.001)/100 + $_POST["input2Inch"]*2458.99 + $_POST["input5Inch"]*10333.99+
-$_POST["input10Inch"]*100020628.99, "<br><br>",
+floor(($_POST["small"]*2458.99+$_POST["medium"]*10333.99+
+$_POST["large"]*100020628.99)*.001)/100 + $_POST["small"]*2458.99 + $_POST["medium"]*10333.99+
+$_POST["large"]*100020628.99+$_POST["giant"]*999999999.99, "<br><br>",
 
 "<b><i>Payment</i></b><br>",
 $_POST["card"], "<br>",
