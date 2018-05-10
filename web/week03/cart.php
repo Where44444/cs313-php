@@ -35,6 +35,7 @@ tr:nth-child(odd) {
       <a class=Link href="purchase.php">Browse</a>
       <a class=Link href="contact.html">Contact</a>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <p>This</p>
       <?php
       if ($_SESSION['small'] > 0)
       echo "<pre>Small Bracket -  Quantity: <span id='small'>" . $_SESSION['small'] .
