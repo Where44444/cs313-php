@@ -1,5 +1,7 @@
-
-
+<?php
+// Start the session
+session_start();
+?>
 <html>
    <head>
       <title>Purchase Review</title>
