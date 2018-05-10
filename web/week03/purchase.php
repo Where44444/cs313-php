@@ -48,12 +48,11 @@ $_SESSION['giant'] = 0;
       <a href=# onclick="addToCart('small')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
-
-      <span id="qtySmall">0</span></p>
-
+      <p>Small </p><span id="small">0</span></p><br>
       <a href=# onclick="addToCart('medium')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
+      <p>Medium </p><span id="medium">0</span></p><br>
 
       <p class=BottomBar2 style="position: absolute; top: 1410px; left: 50px">
       Where44444 Copyright 2017 Alrights Reserved =D <br>
