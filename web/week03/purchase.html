@@ -46,15 +46,23 @@ $_SESSION['giant'] = 0;
       <p id="Load1" style="color:blue"></p>
       <br><br><br><br><br><br><br><br><br><br><br><br>
       <a href=# onclick="addToCart('small')">
-      <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
+      <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="85" width="128">
       </a>
-      <p>Small </p><span id="small">0</span></p><br>
+      <p>Small <span id="small">0</span></p><br>
       <a href=# onclick="addToCart('medium')">
       <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="170" width="256">
       </a>
-      <p>Medium </p><span id="medium">0</span></p><br>
+      <p>Medium <span id="medium">0</span></p><br>
+      <a href=# onclick="addToCart('large')">
+      <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="340" width="512">
+      </a>
+      <p>Large <span id="large">0</span></p><br>
+      <a href=# onclick="addToCart('giant')">
+      <img class=img src="RCBracket.png" alt="RC Phone Bracket" height="850" width="1280">
+      </a>
+      <p>... <span id="giant">0</span></p><br>
 
-      <p class=BottomBar2 style="position: absolute; top: 1410px; left: 50px">
+      <p class=BottomBar2 style="position: absolute; left: 50px">
       Where44444 Copyright 2017 Alrights Reserved =D <br>
       We are not responsible for any mysterious disappearances of money <br>
       from your account.</p>
