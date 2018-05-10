@@ -30,16 +30,9 @@ tr:nth-child(odd) {
    </head>
    <link rel="stylesheet" type="text/css" href="styles.css">
    <body>
-
-<?php
-$_SESSION['small'] = 0;
-$_SESSION['medium'] = 0;
-$_SESSION['large'] = 0;
-$_SESSION['giant'] = 0;
-?>
       <h1 class=Title2>BROWSE</h1>
-      <a class=Link href="index.html">Home</a>
-      <a class=Link href="cart.html">Cart</a>
+      <a class=Link href="index.php">Home</a>
+      <a class=Link href="cart.php">Cart</a>
       <a class=Link href="contact.html">Contact</a>
       <p class=Info2>Purchase RC Brackets Here! Click to add 1 to cart!<br>
       We may even send you some!</p>

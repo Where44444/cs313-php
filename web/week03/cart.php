@@ -27,7 +27,7 @@ tr:nth-child(odd) {
    <link rel="stylesheet" type="text/css" href="styles.css">
    <body onload="functionLoad()">
       <h1 class=Title2>CART</h1>
-      <a class=Link href="index.php">Home</a>
+      <a class=Link href="index.html">Home</a>
       <a class=Link href="purchase.php">Browse</a>
       <a class=Link href="contact.html">Contact</a>
       <p class=Info2>Purchase RC Brackets Here! Enter your desired quantity!<br>
