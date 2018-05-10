@@ -9,7 +9,7 @@ function addToCart(str)
       xmlhttp.open("GET", "addToCart.php?q=" + str, true);
       xmlhttp.send();
   }
-
+test
   function removeFromCart(str)
   {
         var xmlhttp = new XMLHttpRequest();
