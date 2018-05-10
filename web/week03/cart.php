@@ -35,17 +35,19 @@ tr:nth-child(odd) {
       <a class=Link href="purchase.php">Browse</a>
       <a class=Link href="contact.html">Contact</a>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <p>This</p>
       <?php
       if ($_SESSION['small'] > 0)
       echo "<pre>Small Bracket -  Quantity: <span id='small'>" . $_SESSION['small'] .
       "</span></pre><a href=# onclick='removeFromCart(\"small\")'>-</a>". " " . "<a href=# onclick='addToCart(\"small\")'>+</a><br>";
       if ($_SESSION['medium'] > 0)
-      echo "<pre>Medium Bracket - Quantity: <span id='medium'>" . $_SESSION['medium'] . "</span></pre><br>";
+      echo "<pre>Medium Bracket - Quantity: <span id='medium'>" . $_SESSION['medium'] .
+      "</span></pre><a href=# onclick='removeFromCart(\"medium\")'>-</a>". " " . "<a href=# onclick='addToCart(\"medium\")'>+</a><br>";
       if ($_SESSION['large'] > 0)
-      echo "<pre>Large Bracket -  Quantity: <span id='large'>" . $_SESSION['large'] . "</span></pre><br>";
+      echo "<pre>Large Bracket -  Quantity: <span id='large'>" . $_SESSION['large'] .
+      "</span></pre><a href=# onclick='removeFromCart(\"large\")'>-</a>". " " . "<a href=# onclick='addToCart(\"large\")'>+</a><br>";
       if ($_SESSION['giant'] > 0)
-      echo "<pre>THAT Bracket -   Quantity: <span id='giant'>" . $_SESSION['giant'] . "</span></pre><br>";
+      echo "<pre>THAT Bracket -   Quantity: <span id='giant'>" . $_SESSION['giant'] .
+      "</span></pre><a href=# onclick='removeFromCart(\"giant\")'>-</a>". " " . "<a href=# onclick='addToCart(\"giant\")'>+</a><br>";
       ?>
 
 
