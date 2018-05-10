@@ -34,11 +34,17 @@ tr:nth-child(odd) {
       <a class=Link href="index.php">Home</a>
       <a class=Link href="purchase.php">Browse</a>
       <a class=Link href="contact.html">Contact</a>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <?php
       if ($_SESSION['small'] > 0)
-      echo "Small Bracket - Quantity: " . $_SESSION['small'];
-       ?>
+      echo "Small Bracket -    Quantity: " . $_SESSION['small'] . "<br><br>";
+      if ($_SESSION['medium'] > 0)
+      echo "Medium Bracket - Quantity: " . $_SESSION['medium'] . "<br><br>";
+      if ($_SESSION['large'] > 0)
+      echo "Large Bracket -    Quantity: " . $_SESSION['large'] . "<br><br>";
+      if ($_SESSION['giant'] > 0)
+      echo "THAT Bracket -   Quantity: " . $_SESSION['giant'] . "<br><br>";
+      ?>
 
 
       <p class=BottomBar2 style="position: absolute; top: 800px; left: 50px">
