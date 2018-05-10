@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
    <head>
-   <script type="text/javascript" src="MyJavaScript.js"></script>
+   <script type="text/javascript" src="JavaScript.js"></script>
        <title>Business Page</title>
        <style>
 table {
@@ -29,19 +29,15 @@ tr:nth-child(odd) {
 </style>
    </head>
    <link rel="stylesheet" type="text/css" href="styles.css">
-   <body onload="functionLoad()">
-      <h1 class=Title2>PURCHASE</h1>
-      <a class=Link href="index.html">Home</a>
-      <a class=Link href="index3.html">Contact</a>
-      <form class=SearchBar>
-      Search:<br>
-      <input type="text" name="searchtext"><br>
-      </form>
-      <p class=Info2>Purchase RC Brackets Here! Enter your desired quantity!<br>
-      We may even send you some!</p>
+   <body>
+      <h1 class=Title2>CHECKOUT</h1>
+      <a class=Link href="index.php">Home</a>
+      <a class=Link href="purchase.php">Browse</a>
+      <a class=Link href="cart.php">Cart</a>
+      <a class=Link href="contact.html">Contact</a>
       <p id="Load1" style="color:blue"></p>
       <form id=Form1 style="position: absolute; top: 240px; left: 220px"
-      action="http://localhost/~alexjc/week12/review.php"
+      action="review.php"
       onreset="window.alert('Form was reset');"
       method="post"
       >
