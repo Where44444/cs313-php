@@ -1,3 +1,4 @@
 <?php
-echo $_REQUEST["q"];
+session_start();
+echo "q";
 ?>
