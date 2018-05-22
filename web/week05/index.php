@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-       <title>First page</title>
+       <title>First Results</title>
    </head>
    <body>
+   <h1>Scripture Results</h1>
       <?php
       $dbUrl = getenv('DATABASE_URL');
 
@@ -15,20 +16,25 @@
       $dbPassword = $dbopts["pass"];
       $dbName = ltrim($dbopts["path"],'/');
 
+      $book = $_POST['book'];
       $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      echo '<form>
-      Book:<br>
-      <input type="text" name="firstname"><br>
-      </form>'
-      /*foreach ($db->query('SELECT book, verse FROM scriptures') as $row)
+
+      $sql = 'SELECT * FROM scriptures where book = :book';
+      $stmt = $db->prepare($sql);
+      $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+
+      $stmt->execute();
+      $rowsChanged = $stmt->rowCount();
+      $stmt->closeCursor();
+
+
+      foreach ($rowsChanged as $row)
       {
-        echo 'user: ' . $row['book'];
-        echo ' password: ' . $row['verse'];
+        echo "<b>".$row['book']." ".$row['chapter'].":".$row['verse']." - </b>"."\"".$row['content'].".\"";
         echo '<br/>';
       }
-*/
 
        ?>
    </body>
