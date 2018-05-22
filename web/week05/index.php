@@ -21,9 +21,9 @@
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+      $stmt->bindValue(':book', $book, PDO::PARAM_STR);
       $sql = 'SELECT * FROM scriptures where book = :book';
       $stmt = $db->prepare($sql);
-      $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 
       $stmt->execute();
       $rowsChanged = $stmt->rowCount();
