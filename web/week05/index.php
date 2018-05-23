@@ -5,7 +5,9 @@
    </head>
    <body>
    <h1>Search for Database Entries Boi!</h1>
-   <form>
+   <form
+   action="result.php"
+      method="post">
    Search Users:<br>
    <input type="text" name="user" placeholder="Definitely not a user"><br>
    </form>
