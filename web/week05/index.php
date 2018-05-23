@@ -11,7 +11,7 @@
    </form>
    <form>
    Search Posts:<br>
-   <input type="text" name="post" placeholder="Cringy, Dank, and Otherwise Ludicrous Posts"><br>
+   <input type="text" name="post" placeholder="Cringy or Dank Posts"><br>
    </form>
    <form>
    Search Words:<br>
