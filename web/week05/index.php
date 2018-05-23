@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html>
    <head>
-       <title>First Results</title>
+       <title>Search Page</title>
    </head>
    <body>
-   <h1>Scripture Results</h1>
-      <?php
-      $dbUrl = getenv('DATABASE_URL');
-
-      $dbopts = parse_url($dbUrl);
-
-      $dbHost = $dbopts["host"];
-      $dbPort = $dbopts["port"];
-      $dbUser = $dbopts["user"];
-      $dbPassword = $dbopts["pass"];
-      $dbName = ltrim($dbopts["path"],'/');
-
-      $book = "John";
-      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-      $stmt->bindValue(':book', $book, PDO::PARAM_STR);
-      $sql = 'SELECT * FROM scriptures where book = :book';
-      $stmt = $db->prepare($sql);
-
-      $stmt->execute();
-      $rowsChanged = $stmt->rowCount();
-      $stmt->closeCursor();
-
-
-      foreach ($rowsChanged as $row)
-      {
-        echo "<b>".$row['book']." ".$row['chapter'].":".$row['verse']." - </b>"."\"".$row['content'].".\"";
-        echo '<br/>';
-      }
-
-       ?>
+   <h1>Search for Database Entries boi!</h1>
+   <form>
+   Search Users:<br>
+   <input type="text" name="user"><br>
+   </form>
+   <form>
+   Search Posts:<br>
+   <input type="text" name="post"><br>
+   </form>
+   <form>
+   Search Words:<br>
+   <input type="text" name="word"><br>
+   </form>
    </body>
 </html>
