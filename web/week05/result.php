@@ -32,6 +32,7 @@
       $rowsChanged = $stmt->rowCount();
       $stmt->closeCursor();
 
+      echo $userp;
 
       foreach ($rowsChanged as $row)
       {
