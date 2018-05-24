@@ -41,7 +41,7 @@
    $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
    $rows3 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
-   echo "Users in the database:<br>";
+   echo "Users and passwords in the database:<br>";
    foreach ($rows as $row)
    {
      echo "<b>".$row['username']." ".$row['password'] ."</b>";
@@ -49,7 +49,7 @@
    }
    echo "<br>";
 
-   echo "Posts in dem databases:<br>";
+   echo "Posts and cringyness counts in dem databases:<br>";
    foreach ($rows2 as $row)
    {
      echo "<b>".$row['post_text']." ".$row['cringy_count']."</b>";
