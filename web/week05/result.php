@@ -24,17 +24,14 @@
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $sql = 'SELECT * FROM userp where username = :userp';
-      $stmt = $db->prepare($sql);
+      $stmt = $db->prepare('SELECT * FROM userp WHERE username=:userp');
       $stmt->bindValue(':userp', $userp, PDO::PARAM_STR);
-
       $stmt->execute();
-      $rowsChanged = $stmt->rowCount();
-      $stmt->closeCursor();
+      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      echo $userp;
+      echo $rows;
 
-      foreach ($rowsChanged as $row)
+      foreach ($rows as $row)
       {
         echo "<b>".$row['username']." ".$row['password'];
         echo '<br/>';
