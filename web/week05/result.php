@@ -17,24 +17,49 @@
       $dbName = ltrim($dbopts["path"],'/');
 
       $userp = $_POST["user"];
-      $post = $_POST["post"];
-      $word = $_POST["word"];
+      $postp = $_POST["post"];
+      $wordp = $_POST["word"];
 
       $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       $stmt = $db->prepare('SELECT * FROM userp WHERE username=:userp');
+      $stmt2 = $db->prepare('SELECT * FROM post WHERE post_text=:postp');
+      $stmt3 = $db->prepare('SELECT * FROM word WHERE word=:wordp');
       $stmt->bindValue(':userp', $userp, PDO::PARAM_STR);
+      $stmt2->bindValue(':postp', $postp, PDO::PARAM_STR);
+      $stmt3->bindValue(':wordp', $wordp, PDO::PARAM_STR);
       $stmt->execute();
+      $stmt2->execute();
+      $stmt3->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+      $rows3 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
-echo "Users:<br>";
+      echo "Users:<br>";
       foreach ($rows as $row)
       {
         echo "<b>".$row['username']." ".$row['password'];
         echo '<br/>';
       }
+      echo "<br>";
+
+      echo "Posts:<br>";
+      foreach ($rows2 as $row)
+      {
+        echo "<b>".$row['post_text']." ".$row['cringy_count'];
+        echo '<br/>';
+      }
+      echo "<br>";
+
+      echo "Words:<br>";
+      foreach ($rows3 as $row)
+      {
+        echo "<b>".$row['word'];
+        echo '<br/>';
+      }
+      echo "<br>";
 
        ?>
    </body>
