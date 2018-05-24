@@ -14,6 +14,7 @@
    <input type="text" name="word" placeholder="Pen is mightier than the sword, but not F-22 Miniguns"><br>
    Search My Wallet:<br>
    <input type="text" name="wallet" placeholder="No Money Here"><br>
+   <input type="submit" name="WOAH"><br>
    </form>
    </body>
 </html>
