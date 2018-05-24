@@ -29,8 +29,7 @@
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      echo $rows;
-
+echo "Users:<br>"
       foreach ($rows as $row)
       {
         echo "<b>".$row['username']." ".$row['password'];
