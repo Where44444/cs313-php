@@ -40,7 +40,7 @@
       echo "Users:<br>";
       foreach ($rows as $row)
       {
-        echo "<b>".$row['username']." ".$row['password'];
+        echo "<b>".$row['username']." ".$row['password'] ."</b>";
         echo '<br/>';
       }
       echo "<br>";
@@ -48,7 +48,7 @@
       echo "Posts:<br>";
       foreach ($rows2 as $row)
       {
-        echo "<b>".$row['post_text']." ".$row['cringy_count'];
+        echo "<b>".$row['post_text']." ".$row['cringy_count']."</b>";
         echo '<br/>';
       }
       echo "<br>";
@@ -56,7 +56,7 @@
       echo "Words:<br>";
       foreach ($rows3 as $row)
       {
-        echo "<b>".$row['word'];
+        echo "<b>".$row['word']."</b>";
         echo '<br/>';
       }
       echo "<br>";
