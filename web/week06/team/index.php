@@ -21,12 +21,55 @@
 
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $sql = 'SELECT * FROM scripture where book = :book';
+      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          // The request is using the POST method
+
+          $book = $_POST['book'];
+          $chapter = $_POST['chapter'];
+          $verse = $_POST['verse'];
+          $content = $_POST['content'];
+
+       //   echo $book.$chapter.$verse.$content;
+
+          $sql =  'INSERT INTO scriptures (book,chapter,verse,content) VALUES (:book, :chapter, :verse,:content)';
+
+
+
+          $stmt = $db->prepare($sql);
+
+          $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+          $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+          $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
+          $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+
+
+          $stmt->execute();
+
+
+          $rowsChanged = $stmt->rowCount();
+          $stmt->closeCursor();
+
+
+          /*
+          if($rowsChanged > 0)
+          {
+            echo 'Rows Inserted';
+          }
+          else{
+              echo "Something Went wrong";
+          }
+
+          */
+
+      }
+
+
+      $sql = 'SELECT * FROM scriptures';
       $stmt = $db->prepare($sql);
-      $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+     // $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 
       $stmt->execute();
-      $rowsChanged = $stmt->rowCount();
+      $rowsChanged = $stmt->fetchAll(PDO::FETCH_ASSOC);
       $stmt->closeCursor();
 
 
@@ -46,6 +89,8 @@
          <input type="text" name="verse"><br>
          Content:<br>
          <textarea type="text" name="content"></textarea><br>
+
+           <input type="submit" Value="Submit">
        </form>
    </body>
 </html>

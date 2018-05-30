@@ -11,7 +11,7 @@
    Search Posts:<br>
    <input type="text" name="post" placeholder="Cringy or Dank Posts"><br>
    Search Words:<br>
-   <input type="text" name="word" placeholder="Pen is mightier than the sword, but not F-22 Miniguns"><br>
+   <input type="text" name="word" placeholder="Pen is mightier than the sword, but not A-10 Gunship Miniguns"><br>
    Search My Wallet:<br>
    <input type="text" name="wallet" placeholder="No Money Here"><br>
    <input type="submit" name="WOAH"><br>
