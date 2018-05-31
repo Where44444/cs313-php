@@ -31,6 +31,10 @@
 
    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   echo "POST DETECTED!";
+ }
+
    $stmt = $db->prepare('SELECT * FROM userp');
    $stmt2 = $db->prepare('SELECT * FROM post');
    $stmt3 = $db->prepare('SELECT * FROM word');
