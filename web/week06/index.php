@@ -79,8 +79,10 @@
       $stmt->bindValue(':del', $del, PDO::PARAM_STR);
       $stmt->execute();
       $stmt = $db->prepare($sql5);
+      $stmt->bindValue(':del', $del, PDO::PARAM_STR);
       $stmt->execute();
       $stmt = $db->prepare($sql6);
+      $stmt->bindValue(':del', $del, PDO::PARAM_STR);
       $stmt->execute();
     }
  }
