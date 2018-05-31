@@ -32,7 +32,18 @@
    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   echo "POST DETECTED!";
+   $user = $_POST['user'];
+   $password = $_POST['password'];
+
+   $userid = $_POST['userid'];
+   $postp = $_POST['postp'];
+   $cringycount = $_POST['cringycount'];
+
+   $postid = $_POST['postid'];
+   $word = $_POST['word'];
+
+if ($user)
+   echo "<br>" . $user;
  }
 
    $stmt = $db->prepare('SELECT * FROM userp');
@@ -75,7 +86,7 @@
     Insert User Password:<br>
     <input type="text" name="user" placeholder="Definitely not a user"><input type="text" name="password" placeholder="Preferably 1234"><br>
     Insert UserID Post CringyCount:<br>
-    <input type="text" name="userid" placeholder="Pick a random user id, 100% safe"><input type="text" name="post" placeholder="Cringy or Dank Posts"><input type="text" name="cringycount" placeholder="Cringe a day"><br>
+    <input type="text" name="userid" placeholder="Pick a random user id, 100% safe"><input type="text" name="postp" placeholder="Cringy or Dank Posts"><input type="text" name="cringycount" placeholder="Cringe a day"><br>
     Insert PostID Word:<br>
     <input type="text" name="postid" placeholder="Random post id makes for easy bugs"><input type="text" name="word" placeholder="Pen is mightier than the sword, but not A-10 Gunship Miniguns"><br>
     <input type="submit" name="WOAH2"><br>
