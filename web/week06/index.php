@@ -47,9 +47,9 @@
   $sql1 =  'INSERT INTO userp (username,password) VALUES (:username, :password)';
   $sql2 =  'INSERT INTO post (user_id,post_text,cringy_count) VALUES (:userid, :postp, :cringycount)';
   $sql3 =  'INSERT INTO word (post_id,word) VALUES (:postid, :word)';
-  $sql4 =  'DELETE FROM userp WHERE username = :del;'
-  $sql5 =  'DELETE FROM post WHERE post_text = :del;'
-  $sql6 =  'DELETE FROM word WHERE word = :del;'
+  $sql4 =  'DELETE FROM userp WHERE username = :del';
+  $sql5 =  'DELETE FROM post WHERE post_text = :del';
+  $sql6 =  'DELETE FROM word WHERE word = :del';
 
     if ($username)
     {
