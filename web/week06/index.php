@@ -32,7 +32,7 @@
    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   $user = $_POST['user'];
+   $username = $_POST['user'];
    $password = $_POST['password'];
 
    $userid = $_POST['userid'];
@@ -42,8 +42,33 @@
    $postid = $_POST['postid'];
    $word = $_POST['word'];
 
-if ($user)
-   echo "<br>" . $user;
+  $sql1 =  'INSERT INTO userp (username,password) VALUES (:username, :password)';
+  $sql2 =  'INSERT INTO post (user_id,post_text,cringy_count) VALUES (:userid, :postp, :cringycount)';
+  $sql3 =  'INSERT INTO word (post_id,word) VALUES (:postid, :word)';
+
+    if ($username)
+    {
+      $stmt = $db->prepare($sql1);
+      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+      $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+      $stmt->execute();
+    }
+    if ($userid)
+    {
+      $stmt = $db->prepare($sql2);
+      $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+      $stmt->bindValue(':postp', $postp, PDO::PARAM_STR);
+      $stmt->bindValue(':cringycount', $cringycount, PDO::PARAM_INT);
+      $stmt->execute();
+    }
+    if ($postid)
+    {
+      $stmt = $db->prepare($sql3);
+      $stmt->bindValue(':postid', $postid, PDO::PARAM_INT);
+      $stmt->bindValue(':word', $word, PDO::PARAM_STR);
+      $stmt->execute();
+    }
+
  }
 
    $stmt = $db->prepare('SELECT * FROM userp');
