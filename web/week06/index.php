@@ -66,5 +66,17 @@
    echo "<br> No Wallet Database Needed";
 
     ?>
+
+    <form action="" method="post">
+    Insert Users and Passwords:<br>
+    <input type="text" name="user" placeholder="Definitely not a user"><input type="text" name="password" placeholder="Preferably 1234"><br>
+    Search Posts:<br>
+    <input type="text" name="post" placeholder="Cringy or Dank Posts"><br>
+    Search Words:<br>
+    <input type="text" name="word" placeholder="Pen is mightier than the sword, but not A-10 Gunship Miniguns"><br>
+    Search My Wallet:<br>
+    <input type="text" name="wallet" placeholder="No Money Here"><br>
+    <input type="submit" name="WOAH"><br>
+    </form>
    </body>
 </html>
