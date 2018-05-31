@@ -42,9 +42,14 @@
    $postid = $_POST['postid'];
    $word = $_POST['word'];
 
+   $del = $_POST['del'];
+
   $sql1 =  'INSERT INTO userp (username,password) VALUES (:username, :password)';
   $sql2 =  'INSERT INTO post (user_id,post_text,cringy_count) VALUES (:userid, :postp, :cringycount)';
   $sql3 =  'INSERT INTO word (post_id,word) VALUES (:postid, :word)';
+  $sql4 =  'DELETE FROM userp WHERE username = :del;'
+  $sql5 =  'DELETE FROM post WHERE post_text = :del;'
+  $sql6 =  'DELETE FROM word WHERE word = :del;'
 
     if ($username)
     {
@@ -68,7 +73,16 @@
       $stmt->bindValue(':word', $word, PDO::PARAM_STR);
       $stmt->execute();
     }
-
+    if ($del)
+    {
+      $stmt = $db->prepare($sql4);
+      $stmt->bindValue(':del', $del, PDO::PARAM_STR);
+      $stmt->execute();
+      $stmt = $db->prepare($sql5);
+      $stmt->execute();
+      $stmt = $db->prepare($sql6);
+      $stmt->execute();
+    }
  }
 
    $stmt = $db->prepare('SELECT * FROM userp');
@@ -116,5 +130,13 @@
     <input type="text" name="postid" placeholder="Random post id makes for easy bugs"><input type="text" name="word" placeholder="Pen is mightier than the sword, but not A-10 Gunship Miniguns"><br>
     <input type="submit" name="WOAH2"><br>
     </form>
+    <br>
+    <p>Object may not be deleted if it's being used by another table</p><br>
+    <form action="index.php" method="post">
+    Delete from Usernames, Post Text, and Words:<br>
+    <input type="text" name="del" placeholder="Delete useful things here"><br>
+    <input type="submit" name="WOAH3"><br>
+    </form>
+
    </body>
 </html>
