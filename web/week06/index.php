@@ -73,15 +73,11 @@
       $stmt->bindValue(':word', $word, PDO::PARAM_STR);
       $stmt->execute();
     }
-    echo "Before Delete<br>";
     if ($del)
     {
       $stmt = $db->prepare($sql4);
-      echo "Prepare<br>";
       $stmt->bindValue(':del', $del, PDO::PARAM_STR);
-      echo "Bound<br>";
       $stmt->execute();
-      echo "Executed<br>";
       $stmt = $db->prepare($sql5);
       $stmt->bindValue(':del', $del, PDO::PARAM_STR);
       $stmt->execute();
