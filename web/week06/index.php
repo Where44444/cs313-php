@@ -79,8 +79,10 @@
       $stmt->bindValue(':del', $del, PDO::PARAM_STR);
       $stmt->execute();
       $stmt = $db->prepare($sql5);
+      $stmt->bindValue(':del', $del, PDO::PARAM_STR);
       $stmt->execute();
       $stmt = $db->prepare($sql6);
+      $stmt->bindValue(':del', $del, PDO::PARAM_STR);
       $stmt->execute();
     }
  }
@@ -132,6 +134,7 @@
     </form>
     <br>
     <p>Object may not be deleted if it's being used by another table</p><br>
+
     <form action="index.php" method="post">
     Delete from Usernames, Post Text, and Words:<br>
     <input type="text" name="del" placeholder="Delete useful things here"><br>
