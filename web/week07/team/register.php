@@ -7,6 +7,7 @@ session_start();
 <title>Register</title>
 </head>
 <body>
+  <h1>REGISTER</h1>
 <form name="register" method="post" action="createAccount.php">
 Username:<br>
 <input type="text" name="username"><br><br>
