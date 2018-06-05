@@ -10,7 +10,7 @@ session_start();
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 
-foreach ($db->query('SELECT username, password FROM users') as $row) {
+foreach ($db->query('SELECT username, password FROM userteam') as $row) {
 if ($row['username'] == $username) {
     echo "User verified<br>";
 if(password_verify($password, $row['password'])) {
