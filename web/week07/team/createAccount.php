@@ -29,7 +29,7 @@ $password = htmlspecialchars($_POST['password']);
 
 $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
-$statement = $db->prepare('INSERT INTO users (username, password) VALUES (:username, :hashedPwd)');
+$statement = $db->prepare('INSERT INTO userteam (username, password) VALUES (:username, :hashedPwd)');
 $statement->bindValue(':username', $username, PDO::PARAM_STR);
 $statement->bindValue(':hashedPwd', $hashedPwd, PDO::PARAM_STR);
 $statement->execute();
