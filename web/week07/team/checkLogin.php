@@ -12,7 +12,9 @@ $password = htmlspecialchars($_POST['password']);
 
 foreach ($db->query('SELECT username, password FROM users') as $row) {
 if ($row['username'] == $username) {
+    echo "User verified<br>";
 if(password_verify($password, $row['password'])) {
+  echo "Password verified<br>";
 $_SESSION['loggedIn'] = true;
 $_SESSION['currentUser'] = $username;
 header("Location: welcome.php");
