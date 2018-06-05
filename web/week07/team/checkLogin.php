@@ -11,6 +11,7 @@ $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 echo "Loaded";
 foreach ($db->query('SELECT username, password FROM userteam') as $row) {
+  echo $row . "<br>";
 if ($row['username'] == $username) {
     echo "User verified<br>";
 if(password_verify($password, $row['password'])) {
