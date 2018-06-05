@@ -4,16 +4,12 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
+<title>Welcome</title>
 </head>
 <body>
-    <h1>LOGIN</h1>
-<form method="post" action="checkLogin.php">
-Username:<br>
-<input type="text" name="username"><br><br>
-Password:<br>
-<input type="password" name="password"><br><br>
-<input type="submit" name="loginButton">
-</form>
+    <h1>WELCOME</h1>
+    <?php
+echo $_SESSION['currentUser'];
+     ?>
 </body>
 </html>
