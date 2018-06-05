@@ -9,7 +9,7 @@ session_start();
 <?php
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
-
+echo "Loaded";
 foreach ($db->query('SELECT username, password FROM userteam') as $row) {
 if ($row['username'] == $username) {
     echo "User verified<br>";
