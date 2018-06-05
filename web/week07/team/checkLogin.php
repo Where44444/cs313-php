@@ -9,7 +9,20 @@ session_start();
 <?php
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
-echo "Loaded";
+
+$sql = 'SELECT username, password FROM userteam';
+$stmt = $db->prepare($sql);
+// $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+
+$stmt->execute();
+$rowsChanged = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
+
+foreach ($rowsChanged as $row)
+{
+  echo $row['username']." ".$row['password'] . "<br>";
+}
+
 foreach ($db->query('SELECT username, password FROM userteam') as $row) {
   echo $row . "<br>";
 if ($row['username'] == $username) {
