@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->bindValue(':cringycount', 0, PDO::PARAM_INT);
      $stmt->execute();
 
-     $pieces = explode(" ", strtolower($postp));
+     $pieces = explode(" ", preg_replace("/[^A-Za-z0-9 ]/", '', strtolower($postp)));
 
      $stmt = $db->prepare($sql7);
      $stmt->execute();
