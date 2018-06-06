@@ -52,9 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt = $db->prepare($sql7);
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-     echo $rows['id'] . "<br>";
-
+     foreach ($rows as $row)
+     {
+     echo $row['id'] . "<br>";
+     }
    }
    if ($postid)
    {
