@@ -4,7 +4,7 @@
        <title>Search Page</title>
    </head>
    <body>
-   <h1>Search for Database Entries Boi!</h1>
+   <h1 style="font-family:calibri;">                    Post anything you want! As long as it's cringe-free!</h1>
    <form action="result.php" method="post">
    Search Users:<br>
    <input type="text" name="user" placeholder="Definitely not a user"><br>
