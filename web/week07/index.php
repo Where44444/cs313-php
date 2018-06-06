@@ -40,8 +40,8 @@ echo "<br>";
    </form>
    <?php
    // Connect to the database
-   require("dbConnect.php");
-   $db = get_db();
+   //require("dbConnect.php");
+   //$db = get_db();
 
  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $username = $_POST['user'];
