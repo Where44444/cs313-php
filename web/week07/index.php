@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-       <title>Search Page</title>
+       <title>Free Post</title>
    </head>
    <body>
-   <h1 style="font-family:calibri;">                    Post anything you want! As long as it's cringe-free!</h1>
+   <h1 style="font-family:calibri;">Post anything you want! As long as it's cringe-free!</h1>
    <form action="result.php" method="post">
    Search Users:<br>
    <input type="text" name="user" placeholder="Definitely not a user"><br>
@@ -17,19 +17,9 @@
    <input type="submit" name="WOAH"><br>
    </form>
    <?php
-   $dbUrl = getenv('DATABASE_URL');
-
-   $dbopts = parse_url($dbUrl);
-
-   $dbHost = $dbopts["host"];
-   $dbPort = $dbopts["port"];
-   $dbUser = $dbopts["user"];
-   $dbPassword = $dbopts["pass"];
-   $dbName = ltrim($dbopts["path"],'/');
-
-   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   // Connect to the database
+   require("dbConnect.php");
+   $db = get_db();
 
  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $username = $_POST['user'];
