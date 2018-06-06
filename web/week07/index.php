@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt = $db->prepare($sql2);
      $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
      $stmt->bindValue(':postp', $postp, PDO::PARAM_STR);
-     $stmt->bindValue(':cringycount', $cringycount, PDO::PARAM_INT);
+     $stmt->bindValue(':cringycount', 0, PDO::PARAM_INT);
      $stmt->execute();
      $pieces = explode(" ", $postp);
      echo $pieces[0] . "<br>"; // piece1
