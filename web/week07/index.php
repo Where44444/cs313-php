@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  $sql4 =  'DELETE FROM userp WHERE username = :del';
  $sql5 =  'DELETE FROM post WHERE post_text = :del';
  $sql6 =  'DELETE FROM word WHERE word = :del';
+ $sql7 =  'SELECT id from post ORDER BY id DESC LIMIT 1';
 
    if ($username)
    {
@@ -45,9 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->bindValue(':postp', $postp, PDO::PARAM_STR);
      $stmt->bindValue(':cringycount', 0, PDO::PARAM_INT);
      $stmt->execute();
+
      $pieces = explode(" ", $postp);
-     echo $pieces[0] . "<br>"; // piece1
-     echo $pieces[1] . "<br>"; // piece2
+
+     $stmt = $db->prepare($sql7);
+     $stmt->execute();
+     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+     echo $rows['id'] . "<br>";
+
    }
    if ($postid)
    {
