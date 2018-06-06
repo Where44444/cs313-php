@@ -45,6 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->bindValue(':postp', $postp, PDO::PARAM_STR);
      $stmt->bindValue(':cringycount', $cringycount, PDO::PARAM_INT);
      $stmt->execute();
+     $pieces = explode(" ", $postp);
+     echo $pieces[0] . "<br>"; // piece1
+     echo $pieces[1] . "<br>"; // piece2
    }
    if ($postid)
    {
@@ -77,7 +80,7 @@ foreach ($rows as $row)
   echo "---------------------------------------------------------------------------";
   echo "<br>".$row['post_text'] ."<br>".$row['timestamp']."<br>";
   echo "---------------------------------------------------------------------------";
-  echo '<br><br>';
+  echo "<br><br>";
 }
 echo "<br>";
 
