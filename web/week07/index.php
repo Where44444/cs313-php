@@ -5,6 +5,28 @@
    </head>
    <body>
    <h1 style="font-family:calibri;">Post anything you want! As long as it's cringe-free!</h1>
+
+<?php
+// Connect to the database
+require("dbConnect.php");
+$db = get_db();
+
+$stmt = $db->prepare('SELECT username, post_text, timestamp FROM post INNER JOIN userp ON post.user_id = userp.id ORDER BY timestamp DESC');
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($rows as $row)
+{
+  echo "<b>".$row['username']."</b><br>";
+  echo "---------------------------------------------------------------------------"
+  echo "<br>".$row['post_text'] ."<br>".$row['timestamp']."<br>";
+  echo "---------------------------------------------------------------------------"
+  echo '<br>';
+}
+echo "<br>";
+
+ ?>
+
    <form action="result.php" method="post">
    Search Users:<br>
    <input type="text" name="user" placeholder="Definitely not a user"><br>
