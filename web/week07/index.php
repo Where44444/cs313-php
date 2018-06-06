@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->bindValue(':cringycount', 0, PDO::PARAM_INT);
      $stmt->execute();
 
-     $pieces = explode(" ", $postp);
+     $pieces = explode(" ", strtolower($postp));
 
      $stmt = $db->prepare($sql7);
      $stmt->execute();
