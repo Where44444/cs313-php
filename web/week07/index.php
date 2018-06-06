@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-     $piecesFinal = array_unique($array);
+     $piecesFinal = array_unique($pieces);
 
      var_dump($piecesFinal) . "<br>";
 
