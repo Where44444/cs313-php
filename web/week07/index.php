@@ -47,15 +47,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->bindValue(':cringycount', 0, PDO::PARAM_INT);
      $stmt->execute();
 
-     $pieces = explode(" ", preg_replace("/[^A-Za-z0-9 ]/", '', strtolower($postp)));
+     $pieces = array_map('trim',array_filter(explode(" ", preg_replace("/[^A-Za-z0-9 ]/", '', strtolower($postp)))));
+     $piecesFinal = array_unique($pieces);
 
      $stmt = $db->prepare($sql7);
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-     $piecesFinal = array_unique($pieces);
-
-     //var_dump($piecesFinal) . "<br>";
+     var_dump($piecesFinal) . "<br>";
 
      foreach ($rows as $row)
      {
@@ -66,8 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindValue(':postid', $lastid, PDO::PARAM_INT);
 foreach ($piecesFinal as $row)
 {
+  if ($row)
+  {
   $stmt->bindValue(':word', $row, PDO::PARAM_INT);
   $stmt->execute();
+  }
 }
 
    }
