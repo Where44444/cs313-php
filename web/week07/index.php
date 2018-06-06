@@ -31,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  $sql5 =  'DELETE FROM post WHERE post_text = :del';
  $sql6 =  'DELETE FROM word WHERE word = :del';
  $sql7 =  'SELECT id from post ORDER BY id DESC LIMIT 1';
- $sql8 =  'SELECT post_id from word where post_id = :lastid and word = :word';
 
    if ($username)
    {
@@ -56,12 +55,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
      $piecesFinal = array_unique($pieces);
 
-     var_dump($piecesFinal) . "<br>";
+     //var_dump($piecesFinal) . "<br>";
 
      foreach ($rows as $row)
      {
      $lastid = $row['id'];
      }
+
+  $stmt = $db->prepare($sql3);
+  $stmt->bindValue(':postid', $lastid, PDO::PARAM_INT);
+foreach ($piecesFinal as $row)
+{
+  $stmt->bindValue(':word', $row, PDO::PARAM_INT);
+  $stmt->execute();
+}
 
    }
    if ($postid)
