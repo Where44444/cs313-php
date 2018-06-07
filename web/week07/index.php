@@ -8,7 +8,7 @@
 
    <form action="index.php" method="post"><br>
    <input type="text" name="userid" placeholder="Username"><br>
-   <textarea type="text" name="postp" placeholder="Cringy or Dank Posts"></textarea><br>
+   <textarea type="text" name="postp" placeholder="Cringy or Dank Posts" rows="4" cols="50"></textarea><br>
 <input type="submit" name="WOAH2"><br>
    </form>
 
