@@ -169,7 +169,7 @@ for ($x = 0; $x < count($wordList); $x++)
   $wordList[$x] = '';
   if(!in_array($currentWord,$wordsUsed) && in_array($currentWord,$wordList))
   {
-  echo "<h1 style='font-family:calibri;'>" . ucfirst($currentWord) . "</h1><br>";
+  echo "<h1 style='font-family:calibri;'>" . ucfirst($currentWord) . "</h1>";
   }
   array_push($wordsUsed, $currentWord);
 }
