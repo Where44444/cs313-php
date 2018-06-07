@@ -6,6 +6,12 @@
    <body>
    <h1 style="font-family:calibri;">Post anything you want! As long as it's cringe-free!</h1>
 
+   <form action="index.php" method="post"><br>
+   <input type="text" name="userid" placeholder="Username"><br>
+   <textarea type="text" name="postp" placeholder="Cringy or Dank Posts"><br>
+<input type="submit" name="WOAH2"><br>
+   </form>
+
 <?php
 // Connect to the database
 require("dbConnect.php");
@@ -32,13 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  $sql6 =  'DELETE FROM word WHERE word = :del';
  $sql7 =  'SELECT id from post ORDER BY id DESC LIMIT 1';
 
-   if ($username)
+//For debug textbox to add users and passwords
+   /*if ($username)
    {
      $stmt = $db->prepare($sql1);
      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
      $stmt->bindValue(':password', $password, PDO::PARAM_STR);
      $stmt->execute();
-   }
+   }*/
    if ($userid)
    {
      $stmt = $db->prepare($sql2);
@@ -54,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-     var_dump($piecesFinal) . "<br>";
+     //var_dump($piecesFinal) . "<br>";
 
      foreach ($rows as $row)
      {
@@ -73,7 +80,8 @@ foreach ($piecesFinal as $row)
 }
 
    }
-   if ($postid)
+   //For debugging textbox for adding words and deleting everything
+   /*if ($postid)
    {
      $stmt = $db->prepare($sql3);
      $stmt->bindValue(':postid', $postid, PDO::PARAM_INT);
@@ -91,7 +99,7 @@ foreach ($piecesFinal as $row)
      $stmt = $db->prepare($sql4);
      $stmt->bindValue(':del', $del, PDO::PARAM_STR);
      $stmt->execute();
-   }
+   }*/
 }
 
 $stmt = $db->prepare('SELECT username, post_text, timestamp FROM post INNER JOIN userp ON post.user_id = userp.id ORDER BY timestamp DESC');
@@ -110,7 +118,7 @@ echo "<br>";
 
  ?>
 
-   <form action="result.php" method="post">
+  <!-- <form action="result.php" method="post">
    Search Users:<br>
    <input type="text" name="user" placeholder="Definitely not a user"><br>
    Search Posts:<br>
@@ -120,7 +128,7 @@ echo "<br>";
    Search My Wallet:<br>
    <input type="text" name="wallet" placeholder="No Money Here"><br>
    <input type="submit" name="WOAH"><br>
-   </form>
+ </form> -->
    <?php
    // Connect to the database
    //require("dbConnect.php");
@@ -161,7 +169,7 @@ echo "<br>";
    echo "<br> No Wallet Database Needed";
 
     ?>
-    <br><br>
+    <!--<br><br>
     <form action="index.php" method="post">
     Insert User Password:<br>
     <input type="text" name="user" placeholder="Definitely not a user"><input type="text" name="password" placeholder="Preferably 1234"><br>
@@ -178,7 +186,7 @@ echo "<br>";
     Delete from Usernames, Post Text, and Words:<br>
     <input type="text" name="del" placeholder="Delete useful things here"><br>
     <input type="submit" name="WOAH3"><br>
-    </form>
+  </form> -->
 
    </body>
 </html>
