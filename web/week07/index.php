@@ -133,7 +133,7 @@ echo "<br>";
    // Connect to the database
    //require("dbConnect.php");
    //$db = get_db();
-
+/*
    $stmt = $db->prepare('SELECT * FROM userp');
    $stmt2 = $db->prepare('SELECT * FROM post');
    $stmt3 = $db->prepare('SELECT * FROM word');
@@ -167,7 +167,7 @@ echo "<br>";
      echo '<br/>';
    }
    echo "<br> No Wallet Database Needed";
-
+*/
     ?>
     <!--<br><br>
     <form action="index.php" method="post">
