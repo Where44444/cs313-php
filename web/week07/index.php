@@ -11,6 +11,7 @@
    <textarea type="text" name="postp" placeholder="Cringy or Dank Posts" rows="4" cols="50"></textarea><br>
 <input type="submit" name="WOAH2"><br>
    </form>
+   <br><br>
 
 <?php
 // Connect to the database
@@ -18,25 +19,26 @@ require("dbConnect.php");
 $db = get_db();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['user'];
-  $password = $_POST['password'];
+  //$username = $_POST['user'];
+  //$password = $_POST['password'];
 
   $userid = $_POST['userid'];
   $postp = $_POST['postp'];
-  $cringycount = $_POST['cringycount'];
+  //$cringycount = $_POST['cringycount'];
 
-  $postid = $_POST['postid'];
-  $word = $_POST['word'];
+  //$postid = $_POST['postid'];
+  //$word = $_POST['word'];
 
-  $del = $_POST['del'];
+  //$del = $_POST['del'];
 
- $sql1 =  'INSERT INTO userp (username,password) VALUES (:username, :password)';
+ /*$sql1 =  'INSERT INTO userp (username,password) VALUES (:username, :password)';
  $sql2 =  'INSERT INTO post (user_id,post_text,cringy_count) VALUES (:userid, :postp, :cringycount)';
  $sql3 =  'INSERT INTO word (post_id,word) VALUES (:postid, :word)';
  $sql4 =  'DELETE FROM userp WHERE username = :del';
  $sql5 =  'DELETE FROM post WHERE post_text = :del';
  $sql6 =  'DELETE FROM word WHERE word = :del';
  $sql7 =  'SELECT id from post ORDER BY id DESC LIMIT 1';
+ $sql8 =  'SELECT id from userp where username = :userid';*/
 
 //For debug textbox to add users and passwords
    /*if ($username)
@@ -48,7 +50,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    }*/
    if ($userid)
    {
-     $stmt = $db->prepare($sql2);
+     $stmt = $db->prepare('SELECT id from userp where username = :userid');
+     $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+     $stmt->execute();
+     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+     if($rows[0])
+     {
+       echo "FOUND<br>";
+     }
+     foreach ($rows as $row)
+     $userid = $row['id'];
+
+     $userid = 10;
+     $stmt = $db->prepare('INSERT INTO post (user_id,post_text,cringy_count) VALUES (:userid, :postp, :cringycount)');
      $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
      $stmt->bindValue(':postp', $postp, PDO::PARAM_STR);
      $stmt->bindValue(':cringycount', 0, PDO::PARAM_INT);
@@ -57,18 +72,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $pieces = array_map('trim',array_filter(explode(" ", preg_replace("/[^A-Za-z0-9 ]/", '', strtolower($postp)))));
      $piecesFinal = array_unique($pieces);
 
-     $stmt = $db->prepare($sql7);
+     $stmt = $db->prepare('SELECT id from post ORDER BY id DESC LIMIT 1');
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
      //var_dump($piecesFinal) . "<br>";
 
      foreach ($rows as $row)
-     {
      $lastid = $row['id'];
-     }
 
-  $stmt = $db->prepare($sql3);
+  $stmt = $db->prepare('INSERT INTO word (post_id,word) VALUES (:postid, :word)');
   $stmt->bindValue(':postid', $lastid, PDO::PARAM_INT);
 foreach ($piecesFinal as $row)
 {
