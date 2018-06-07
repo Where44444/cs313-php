@@ -148,7 +148,7 @@ foreach ($rows as $row)
   echo "---------------------------------------------------------------------------";
   echo "<br><br>";
 }
-echo "<br><p style='font-family:calibri;'><strong>What people are talking about:</strong></p><br><br>";
+echo "<br><p style='font-family:calibri;'><strong>What people are talking about:</strong></p><br>";
 
 $stmt = $db->prepare('SELECT word FROM word');
 $stmt->execute();
