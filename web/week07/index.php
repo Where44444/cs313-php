@@ -10,8 +10,13 @@ session_start();
    <h1 style="font-family:calibri;">Post anything you want! As long as it's cringe-free!</h1>
 
 <?php
-if($_SESSION['loggedIn'])
+if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SESSION['loggedIn']) {
+  $userid = $_POST['userid'];
+  $postp = $_POST['postp'];
+  $_SESSION['loggedIn'] = true;
+  $_SESSION['userp'] = $userid;
 echo '<p style="font-family:calibri;">Welcome ' . $_SESSION['userp'] . '! You are logged in to the most jank website possible!!!</p><br>';
+}
  ?>
 
    <form action="index.php" method="post"><br>
@@ -29,12 +34,6 @@ $db = get_db();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //$username = $_POST['user'];
   //$password = $_POST['password'];
-
-  $userid = $_POST['userid'];
-  $postp = $_POST['postp'];
-
-  $_SESSION['loggedIn'] = true;
-  $_SESSION['userp'] = $userid;
   //$cringycount = $_POST['cringycount'];
 
   //$postid = $_POST['postid'];
