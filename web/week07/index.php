@@ -14,8 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SESSION['loggedIn']) {
   $userid = $_POST['userid'];
   $postp = $_POST['postp'];
   $_SESSION['loggedIn'] = true;
-  $_SESSION['userp'] = $userid;
 echo '<p style="font-family:calibri;">Welcome ' . $_SESSION['userp'] . '! You are logged in to the most jank website possible!!!</p><br>';
+if($userid)
+  $_SESSION['userp'] = $userid;
 }
  ?>
 
