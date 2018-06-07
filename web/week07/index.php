@@ -148,6 +148,18 @@ foreach ($rows as $row)
 }
 echo "<br>";
 
+$stmt = $db->prepare('SELECT word FROM word');
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$i = 0;
+foreach ($rows as $row)
+{
+$wordList[$i] = $row['word'];
+$i++;
+}
+var_dump($wordList);
+
  ?>
 
   <!-- <form action="result.php" method="post">
