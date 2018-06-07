@@ -146,7 +146,7 @@ foreach ($rows as $row)
   echo "---------------------------------------------------------------------------";
   echo "<br><br>";
 }
-echo "<br>";
+echo "<br><strong>What people are talking about:</strong><br><br>";
 
 $stmt = $db->prepare('SELECT word FROM word');
 $stmt->execute();
@@ -158,7 +158,19 @@ foreach ($rows as $row)
 $wordList[$i] = $row['word'];
 $i++;
 }
-var_dump($wordList);
+//var_dump($wordList);
+
+$wordsUsed = array(" ");
+foreach ($x = 0; $x < count($wordList); $x++)
+{
+  $currentWord = $wordList[$x];
+  $wordList[$x] = '';
+  if(!in_array($currentWord,$wordsUsed) && in_array($currentWord,$wordList))
+  {
+  echo $currentWord . "<br>";
+  }
+  array_push($wordsUsed, $currentWord);
+}
 
  ?>
 
