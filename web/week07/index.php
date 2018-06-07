@@ -55,14 +55,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-     if($rows[0])
+     if($rows[0]) //If user already exists
      {
-       echo "FOUND<br>";
+       foreach ($rows as $row)
+       $userid = $row['id'];
      }
-     foreach ($rows as $row)
-     $userid = $row['id'];
+     else { //Add them if they don't
+       $stmt = $db->prepare('INSERT INTO userp (username) VALUES (:username)');
+       $stmt->bindValue(':username', $userid, PDO::PARAM_STR);
+       $stmt->execute();
 
-     $userid = 10;
+       $stmt = $db->prepare('SELECT id from userp ORDER BY id DESC LIMIT 1');
+       $stmt->execute();
+       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+       foreach ($rows as $row)
+       $userid = $row['id'];
+     }
+
      $stmt = $db->prepare('INSERT INTO post (user_id,post_text,cringy_count) VALUES (:userid, :postp, :cringycount)');
      $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
      $stmt->bindValue(':postp', $postp, PDO::PARAM_STR);
