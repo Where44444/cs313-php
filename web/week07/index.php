@@ -161,7 +161,7 @@ $i++;
 //var_dump($wordList);
 
 $wordsUsed = array(" ");
-foreach ($x = 0; $x < count($wordList); $x++)
+for ($x = 0; $x < count($wordList); $x++)
 {
   $currentWord = $wordList[$x];
   $wordList[$x] = '';
