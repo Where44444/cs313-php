@@ -148,7 +148,7 @@ foreach ($rows as $row)
   echo "---------------------------------------------------------------------------";
   echo "<br><br>";
 }
-echo "<br><strong>What people are talking about:</strong><br><br>";
+echo "<br><p style='font-family:calibri;'><strong>What people are talking about:</strong></p><br><br>";
 
 $stmt = $db->prepare('SELECT word FROM word');
 $stmt->execute();
@@ -169,7 +169,7 @@ for ($x = 0; $x < count($wordList); $x++)
   $wordList[$x] = '';
   if(!in_array($currentWord,$wordsUsed) && in_array($currentWord,$wordList))
   {
-  echo $currentWord . "<br>";
+  echo "<p style='font-family:calibri;'>" . ucfirst($currentWord) . "</p><br>";
   }
   array_push($wordsUsed, $currentWord);
 }
